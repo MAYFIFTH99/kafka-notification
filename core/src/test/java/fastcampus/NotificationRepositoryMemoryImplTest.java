@@ -20,7 +20,7 @@ class NotificationRepositoryMemoryImplTest {
     private final Instant deletedAt = Instant.now().plus(90, ChronoUnit.DAYS);
 
     private final Notification notification = new CommentNotification("1", 1L, NotificationType.LIKE, now,
-            now, now, deletedAt, 1L, 1L, "comment");
+            now, now, deletedAt, 1L, 1L, "comment", 1L);
 
     /**
      * 알림 객체 생성
