@@ -1,17 +1,11 @@
 package fastcampus;
 
-import java.lang.annotation.Documented;
 import java.time.Instant;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-enum NotificationType{
-    LIKE,
-    COMMENT,
-    FOLLOW
-}
 
 @EqualsAndHashCode(of = "id")
 @AllArgsConstructor
