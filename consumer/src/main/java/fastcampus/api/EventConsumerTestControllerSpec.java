@@ -4,7 +4,6 @@ import fastcampus.event.CommentEvent;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.ExampleObject;
-import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
@@ -27,8 +26,8 @@ public interface EventConsumerTestControllerSpec {
 
     String COMMENT_EVENT_PAYLOAD = """
             {
-                "type:" : "ADD",
-                "postId": 1
+                "type": "ADD",
+                "postId": 1,
                 "userId": 2,
                 "commentId": 3
             }
