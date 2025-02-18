@@ -1,0 +1,23 @@
+spring:
+  cloud:
+    function:
+      definition: comment; like; follow; # 메시지를 수신했을 때 처리할 함수 정의
+    stream:
+      binder:
+        brokers: localhost:9092
+      bindings:
+        comment-in-0:
+          destination: comment # 메시지를 수신할 토픽 이름
+          content-type: application/json
+          group: notification-consumer # 컨슈머 그룹 이름
+          consumer.max-attempts: 2 # 메시지 처리 실패 시 재시도 횟수
+        like-in-0:
+            destination: like
+            content-type: application/json
+            group: notification-consumer
+            consumer.max-attempts: 2
+        follow-in-0:
+            destination: follow
+            content-type: application/json
+            group: notification-consumer
+            consumer.max-attempts: 2
