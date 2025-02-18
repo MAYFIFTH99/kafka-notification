@@ -10,7 +10,7 @@ java {
     }
 }
 
-ext["springCloudVersion"] = "2023.0.0"
+ext["springCloudVersion"] = "2024.0.0"
 
 allprojects{
     // allProjects 는 root project를 비롯한 그 하위 프로젝트에게 모두 적용됨
