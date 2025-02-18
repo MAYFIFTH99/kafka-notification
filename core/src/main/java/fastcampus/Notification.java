@@ -1,12 +1,15 @@
 package fastcampus;
 
 import java.time.Instant;
+import lombok.EqualsAndHashCode;
 
 enum NotificationType{
     LIKE,
     COMMENT,
     FOLLOW
 }
+
+@EqualsAndHashCode(of = "id")
 public class Notification {
 
     public String id;
