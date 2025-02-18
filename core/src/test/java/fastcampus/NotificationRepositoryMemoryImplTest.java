@@ -6,10 +6,16 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Optional;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.test.context.SpringBootTest;
 
+@SpringBootTest
+@SpringBootApplication
 class NotificationRepositoryMemoryImplTest {
 
-    private final NotificationRepositoryMemoryImpl sut = new NotificationRepositoryMemoryImpl();
+    @Autowired
+    private NotificationRepository sut;
     private final Instant now = Instant.now();
     private final Instant deletedAt = Instant.now().plus(90, ChronoUnit.DAYS);
 
@@ -44,8 +50,8 @@ class NotificationRepositoryMemoryImplTest {
         //then
         assertEquals(savedNotification.id, "1");
         assertEquals(savedNotification.userId, 1L);
-        assertEquals(savedNotification.createdAt, now);
-        assertEquals(savedNotification.deletedAt, deletedAt);
+        assertEquals(savedNotification.createdAt.getEpochSecond(), now.getEpochSecond());
+        assertEquals(savedNotification.deletedAt.getEpochSecond(), deletedAt.getEpochSecond());
         assertEquals(savedNotification, notification);
     }
 
@@ -56,10 +62,9 @@ class NotificationRepositoryMemoryImplTest {
         sut.save(notification);
 
         //when
-        Notification deletedNotification = sut.deleteById("1");
+        sut.deleteById("1");
 
         //then
-        assertEquals(deletedNotification.id, "1");
         assertTrue(sut.findById("1").isEmpty());
     }
 }
