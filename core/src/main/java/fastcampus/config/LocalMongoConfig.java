@@ -31,7 +31,7 @@ public class LocalMongoConfig {
     @PostConstruct // LocalMongoConfig 객체가 생성된 후 1회 실행 (빈 생성 이후)
     public void startMongo() {
         try {
-            createMongoInstance().start();
+            mongo.start();
         } catch (Exception e) {
             log.error("Failed to start MongoDB", e);
         }
