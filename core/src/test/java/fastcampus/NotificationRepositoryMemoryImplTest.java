@@ -19,6 +19,9 @@ class NotificationRepositoryMemoryImplTest {
     private final Instant now = Instant.now();
     private final Instant deletedAt = Instant.now().plus(90, ChronoUnit.DAYS);
 
+    private final Notification notification = new CommentNotification("1", 1L, NotificationType.LIKE, now,
+            now, now, deletedAt, 1L, 1L, "comment", 1L);
+
     /**
      * 알림 객체 생성
      * 저장
@@ -27,7 +30,6 @@ class NotificationRepositoryMemoryImplTest {
     @Test
     void test_save() throws Exception {
         //given
-        Notification notification = new Notification("1", 1L, NotificationType.LIKE, now, deletedAt);
 
         //when
         sut.save(notification);
@@ -40,7 +42,6 @@ class NotificationRepositoryMemoryImplTest {
     @Test
     void test_find_by_id() throws Exception {
         //given
-        Notification notification = new Notification("1", 1L, NotificationType.LIKE, now, deletedAt);
         sut.save(notification);
 
         //when
@@ -48,7 +49,7 @@ class NotificationRepositoryMemoryImplTest {
         Notification savedNotification = optionalNotification.orElseThrow();
 
         //then
-        assertEquals(savedNotification.id, "1");
+        assertEquals(savedNotification.getId(), "1");
         assertEquals(savedNotification.userId, 1L);
         assertEquals(savedNotification.createdAt.getEpochSecond(), now.getEpochSecond());
         assertEquals(savedNotification.deletedAt.getEpochSecond(), deletedAt.getEpochSecond());
@@ -58,7 +59,6 @@ class NotificationRepositoryMemoryImplTest {
     @Test
     void test_delete_by_id() throws Exception {
         //given
-        Notification notification = new Notification("1", 1L, NotificationType.LIKE, now, deletedAt);
         sut.save(notification);
 
         //when
