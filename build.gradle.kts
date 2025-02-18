@@ -1,6 +1,7 @@
 plugins {
     java
     id("org.springframework.boot") version "3.4.2"
+    id("io.spring.dependency-management") version "1.1.4"
 }
 
 java {
@@ -8,6 +9,8 @@ java {
         languageVersion = JavaLanguageVersion.of(21)
     }
 }
+
+ext["springCloudVersion"] = "2024.0.0"
 
 allprojects{
     // allProjects 는 root project를 비롯한 그 하위 프로젝트에게 모두 적용됨
@@ -42,6 +45,12 @@ subprojects{
         testImplementation(platform("org.junit:junit-bom:5.10.0"))
         testImplementation("org.junit.jupiter:junit-jupiter")
         testImplementation("org.springframework.boot:spring-boot-starter-test")
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom("org.springframework.cloud:spring-cloud-dependencies:${property("springCloudVersion")}")
+        }
     }
 
     tasks.test {
