@@ -12,7 +12,12 @@ public class NotificationSaveService {
     private NotificationRepository notificationRepository;
 
     public void insert(Notification notification){
-        Notification result = notificationRepository.save(notification);
+        Notification result = notificationRepository.insert(notification);
         log.info("inserted: {}", result);
+    }
+
+    public void upsert(Notification notification){
+        Notification result = notificationRepository.save(notification);
+        log.info("upserted: {}", result);
     }
 }
