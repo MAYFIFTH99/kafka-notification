@@ -12,6 +12,4 @@ public class Comment {
     private Long userId;
     private String content;
     private Instant createdAt;
-
-
 }
