@@ -4,15 +4,20 @@ import java.time.Instant;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.Setter;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
+import org.springframework.data.mongodb.core.mapping.FieldType;
 
 
 @EqualsAndHashCode(of = "id")
 @AllArgsConstructor
 @Document("notification")
 @Getter
+@Setter
 public abstract class Notification {
 
+    @Field(targetType = FieldType.STRING)
     protected String id;
     protected Long userId;
     protected NotificationType type;

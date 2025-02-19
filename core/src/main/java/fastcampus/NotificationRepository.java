@@ -13,6 +13,9 @@ public interface NotificationRepository extends MongoRepository<Notification, St
 
     void deleteById(String id);
 
-    @Query("{ 'type': ?0, 'commentid': ?1 }")
+    @Query("{ 'type': ?0, 'commentId': ?1 }")
     Optional<Notification> findByTypeAndCommentId(NotificationType type, Long commentId);
+
+    @Query("{ 'tpye':  ?0, 'postId':  ?1}")
+    Optional<Notification> findByTypeAndPostId(NotificationType type, Long postId);
 }
