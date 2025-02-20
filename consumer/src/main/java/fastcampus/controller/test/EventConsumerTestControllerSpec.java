@@ -61,7 +61,7 @@ public interface EventConsumerTestControllerSpec {
                 "type": "ADD",
                 "postId": 1,
                 "userId": 2,
-                "commentId": 333
+                "commentId": 3
             }
             """;
 

@@ -14,7 +14,7 @@ import org.testcontainers.utility.DockerImageName;
 
 @Slf4j
 @Configuration
-@Profile("redis")
+@Profile("test")
 public class LocalRedisConfig {
 
     private static final String IMAGE = "redis:7.4.0";
@@ -41,7 +41,7 @@ public class LocalRedisConfig {
         }
     }
 
-    @Bean
+    @Bean(name = "notificationRedisFactory")
     public RedisConnectionFactory redisConnectionFactory(){
         RedisStandaloneConfiguration redisStandaloneConfiguration = new RedisStandaloneConfiguration(
                 redis.getHost(),
