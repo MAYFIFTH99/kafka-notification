@@ -16,4 +16,8 @@ public class LastReadAtService {
         return repository.setLastReadAt(userId);
     }
 
+    public Instant getLastReadAt(long userId){
+        return repository.getLastReadAt(userId);
+    }
+
 }
