@@ -1,4 +1,4 @@
-package fastcampus.api;
+package fastcampus.controller.test;
 
 import fastcampus.event.CommentEvent;
 import fastcampus.event.FollowEvent;

@@ -1,5 +1,6 @@
-package fastcampus;
+package fastcampus.client;
 
+import fastcampus.domain.Comment;
 import java.time.Instant;
 import java.util.HashMap;
 import java.util.Map;

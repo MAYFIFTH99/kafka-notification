@@ -1,5 +1,7 @@
-package fastcampus.event;
+package fastcampus.consumer;
 
+import fastcampus.event.FollowEvent;
+import fastcampus.event.FollowEventType;
 import fastcampus.task.FollowAddTask;
 import fastcampus.task.FollowRemoveTask;
 import java.util.function.Consumer;

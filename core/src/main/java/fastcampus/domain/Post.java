@@ -1,4 +1,4 @@
-package fastcampus;
+package fastcampus.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

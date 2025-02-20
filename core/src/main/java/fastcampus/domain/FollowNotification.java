@@ -1,4 +1,4 @@
-package fastcampus;
+package fastcampus.domain;
 
 import java.time.Instant;
 import lombok.Getter;

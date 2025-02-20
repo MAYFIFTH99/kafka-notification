@@ -1,5 +1,6 @@
-package fastcampus;
+package fastcampus.client;
 
+import fastcampus.domain.Post;
 import java.util.HashMap;
 import java.util.Map;
 import org.springframework.stereotype.Component;

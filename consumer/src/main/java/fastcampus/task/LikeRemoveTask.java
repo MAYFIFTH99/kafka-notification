@@ -1,12 +1,12 @@
 package fastcampus.task;
 
-import fastcampus.LikeNotification;
-import fastcampus.Notification;
-import fastcampus.NotificationGetService;
-import fastcampus.NotificationRemoveService;
-import fastcampus.NotificationSaveService;
-import fastcampus.NotificationType;
-import fastcampus.PostClient;
+import fastcampus.domain.LikeNotification;
+import fastcampus.domain.Notification;
+import fastcampus.service.NotificationGetService;
+import fastcampus.service.NotificationRemoveService;
+import fastcampus.service.NotificationSaveService;
+import fastcampus.domain.NotificationType;
+import fastcampus.client.PostClient;
 import fastcampus.event.LikeEvent;
 import java.time.Instant;
 import java.util.Optional;

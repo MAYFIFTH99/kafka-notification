@@ -1,14 +1,14 @@
 package fastcampus.task;
 
-import fastcampus.Comment;
-import fastcampus.CommentClient;
-import fastcampus.CommentNotification;
-import fastcampus.Notification;
-import fastcampus.NotificationIdGenerator;
-import fastcampus.NotificationSaveService;
-import fastcampus.NotificationType;
-import fastcampus.Post;
-import fastcampus.PostClient;
+import fastcampus.domain.Comment;
+import fastcampus.client.CommentClient;
+import fastcampus.domain.CommentNotification;
+import fastcampus.domain.Notification;
+import fastcampus.utils.NotificationIdGenerator;
+import fastcampus.service.NotificationSaveService;
+import fastcampus.domain.NotificationType;
+import fastcampus.domain.Post;
+import fastcampus.client.PostClient;
 import fastcampus.event.CommentEvent;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;

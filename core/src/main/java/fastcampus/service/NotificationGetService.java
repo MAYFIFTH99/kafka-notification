@@ -1,5 +1,8 @@
-package fastcampus;
+package fastcampus.service;
 
+import fastcampus.domain.Notification;
+import fastcampus.repository.NotificationRepository;
+import fastcampus.domain.NotificationType;
 import java.util.Optional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

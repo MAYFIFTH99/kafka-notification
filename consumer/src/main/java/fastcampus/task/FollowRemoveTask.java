@@ -1,10 +1,10 @@
 package fastcampus.task;
 
-import fastcampus.FollowNotification;
-import fastcampus.Notification;
-import fastcampus.NotificationGetService;
-import fastcampus.NotificationRemoveService;
-import fastcampus.NotificationType;
+import fastcampus.domain.FollowNotification;
+import fastcampus.domain.Notification;
+import fastcampus.service.NotificationGetService;
+import fastcampus.service.NotificationRemoveService;
+import fastcampus.domain.NotificationType;
 import fastcampus.event.FollowEvent;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
