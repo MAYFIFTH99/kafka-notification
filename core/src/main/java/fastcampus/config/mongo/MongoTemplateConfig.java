@@ -1,6 +1,6 @@
-package fastcampus.config;
+package fastcampus.config.mongo;
 
-import static fastcampus.config.MongoTemplateConfig.MONGO_TEMPLATE;
+import static fastcampus.config.mongo.MongoTemplateConfig.MONGO_TEMPLATE;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

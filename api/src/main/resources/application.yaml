@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: application-api
+  profiles:
+    active: local
+    include: redis

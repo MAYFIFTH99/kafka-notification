@@ -1,4 +1,4 @@
-package fastcampus.config;
+package fastcampus.config.mongo;
 
 import com.mongodb.ConnectionString;
 import jakarta.annotation.PostConstruct;
