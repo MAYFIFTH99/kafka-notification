@@ -8,12 +8,12 @@ import lombok.Getter;
 public class ConvertedLikeNotification extends ConvertedNotification{
     private final String userName;
     private final String userProfileImageUrl;
-    private final Long userCount;
+    private final long userCount;
     private final String postImageUrl;
 
     public ConvertedLikeNotification(String id, NotificationType type,
             Instant occurredAt, Instant lastUpdatedAt, String userName, String userProfileImageUrl,
-            Long userCount, String postImageUrl) {
+            long userCount, String postImageUrl) {
         super(id, type, occurredAt, lastUpdatedAt);
         this.userName = userName;
         this.userProfileImageUrl = userProfileImageUrl;
