@@ -1,5 +1,7 @@
-package fastcampus;
+package fastcampus.repository;
 
+import fastcampus.domain.Notification;
+import fastcampus.domain.NotificationType;
 import java.util.Optional;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;

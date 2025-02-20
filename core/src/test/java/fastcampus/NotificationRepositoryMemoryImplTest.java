@@ -2,6 +2,10 @@ package fastcampus;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import fastcampus.domain.CommentNotification;
+import fastcampus.domain.Notification;
+import fastcampus.domain.NotificationType;
+import fastcampus.repository.NotificationRepository;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Optional;

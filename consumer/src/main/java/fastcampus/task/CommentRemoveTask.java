@@ -1,10 +1,10 @@
 package fastcampus.task;
 
-import fastcampus.NotificationGetService;
-import fastcampus.NotificationRemoveService;
-import fastcampus.NotificationType;
-import fastcampus.Post;
-import fastcampus.PostClient;
+import fastcampus.service.NotificationGetService;
+import fastcampus.service.NotificationRemoveService;
+import fastcampus.domain.NotificationType;
+import fastcampus.domain.Post;
+import fastcampus.client.PostClient;
 import fastcampus.event.CommentEvent;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

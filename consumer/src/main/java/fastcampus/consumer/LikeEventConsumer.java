@@ -1,5 +1,7 @@
-package fastcampus.event;
+package fastcampus.consumer;
 
+import fastcampus.event.LikeEvent;
+import fastcampus.event.LikeEventType;
 import fastcampus.task.LikeAddTask;
 import fastcampus.task.LikeRemoveTask;
 import java.util.function.Consumer;

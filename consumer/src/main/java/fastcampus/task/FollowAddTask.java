@@ -1,9 +1,9 @@
 package fastcampus.task;
 
-import fastcampus.FollowNotification;
-import fastcampus.NotificationIdGenerator;
-import fastcampus.NotificationSaveService;
-import fastcampus.NotificationType;
+import fastcampus.domain.FollowNotification;
+import fastcampus.utils.NotificationIdGenerator;
+import fastcampus.service.NotificationSaveService;
+import fastcampus.domain.NotificationType;
 import fastcampus.event.FollowEvent;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;

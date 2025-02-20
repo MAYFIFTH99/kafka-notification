@@ -1,4 +1,4 @@
-package fastcampus;
+package fastcampus.utils;
 
 import org.bson.types.ObjectId;
 

@@ -1,4 +1,4 @@
-package fastcampus;
+package fastcampus.domain;
 
 public enum NotificationType {
     LIKE,

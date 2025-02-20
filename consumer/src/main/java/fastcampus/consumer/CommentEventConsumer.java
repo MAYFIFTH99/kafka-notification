@@ -1,5 +1,7 @@
-package fastcampus.event;
+package fastcampus.consumer;
 
+import fastcampus.event.CommentEvent;
+import fastcampus.event.CommentEventType;
 import fastcampus.task.CommentAddTask;
 import fastcampus.task.CommentRemoveTask;
 import java.util.function.Consumer;
