@@ -13,14 +13,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/v1/user-notification")
-public class UserNotificationListController {
+public class UserNotificationListController implements UserNotificationListControllerSpec {
 
     private final GetUserNotificationService getUserNotificationService;
 
     @GetMapping("/{userId}")
+    @Override
     public UserNotificationListResponse getNotifications(@PathVariable Long userId,
             @RequestParam(required = false) Instant pivot) {
-        return UserNotificationListResponse.of(getUserNotificationService.getUserNotificationByPivot(
-                userId, pivot));
+        return UserNotificationListResponse.of(
+                getUserNotificationService.getUserNotificationByPivot(
+                        userId, pivot));
     }
 }
