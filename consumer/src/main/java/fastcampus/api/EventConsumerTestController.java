@@ -1,6 +1,7 @@
 package fastcampus.api;
 
 import fastcampus.event.CommentEvent;
+import fastcampus.event.FollowEvent;
 import fastcampus.event.LikeEvent;
 import java.util.function.Consumer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,9 @@ public class EventConsumerTestController implements EventConsumerTestControllerS
     @Autowired
     private Consumer<LikeEvent> like;
 
+    @Autowired
+    private Consumer<FollowEvent> follow;
+
     @Override
     @PostMapping("/test/comment")
     public void comment(@RequestBody CommentEvent event) {
@@ -28,6 +32,13 @@ public class EventConsumerTestController implements EventConsumerTestControllerS
     public void like(@RequestBody LikeEvent event) {
         like.accept(event);
     }
+
+    @Override
+    @PostMapping("/test/follow")
+    public void follow(@RequestBody FollowEvent event) {
+        follow.accept(event);
+    }
+
 
 
 }
