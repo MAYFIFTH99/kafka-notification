@@ -1,5 +1,6 @@
 package fastcampus.controller;
 
+import fastcampus.response.UserNotificationListResponse;
 import fastcampus.service.GetUserNotificationService;
 import java.time.Instant;
 import lombok.RequiredArgsConstructor;
@@ -17,8 +18,9 @@ public class UserNotificationListController {
     private final GetUserNotificationService getUserNotificationService;
 
     @GetMapping("/{userId}")
-    public void getNotifications(@PathVariable Long userId,
+    public UserNotificationListResponse getNotifications(@PathVariable Long userId,
             @RequestParam(required = false) Instant pivot) {
-        return UserNotificationListResponse
+        return UserNotificationListResponse.of(getUserNotificationService.getUserNotificationByPivot(
+                userId, pivot));
     }
 }
