@@ -31,9 +31,7 @@ public class NotificationGetService {
     public Instant getLatestUpdatedAt(Long userId){
         Optional<Notification> notification = notificationRepository.findFirstByUserIdOrderByLastUpdatedAtDesc(
                 userId);
-        if(notification.isEmpty()){
-            return null;
-        }
-        return notification.get().getLastUpdatedAt();
+
+        return notification.map(Notification::getLastUpdatedAt).orElse(null);
     }
 }

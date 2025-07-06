@@ -19,6 +19,7 @@ public class NotificationListService {
     // 목록 조회 : Pivot 방식(occurredAt 기준) vs Paging 방식(page size, number) 중 피봇 방식
     public GetUserNotificationByPivotResult getUserNotificationByPivot(Long userId, Instant occurredAt) {
         Slice<Notification> result;
+
         if (occurredAt == null) {
             result = notificationRepository.findAllByUserIdOrderByOccurredAtDesc(userId,
                     PageRequest.of(0, PAGE_SIZE));
