@@ -17,14 +17,15 @@ public class NotificationReadRepository {
         String key = getKey(userId);
         redisTemplate.opsForValue().set(key, String.valueOf(lastReadAt));
         redisTemplate.expire(key, 90, TimeUnit.DAYS); // TTL
-        return Instant.ofEpochMilli(lastReadAt);
 
+        return Instant.ofEpochMilli(lastReadAt);
     }
 
 
     public Instant getLastReadAt(long userId) {
         String key = getKey(userId);
         String lastReadAtStr = redisTemplate.opsForValue().get(key);
+
         if (lastReadAtStr == null) {
             return null;
         }
